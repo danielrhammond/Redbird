@@ -140,11 +140,11 @@ class RedbirdTests: XCTestCase {
                 .enqueue("PING")
                 .execute()
             XCTAssertEqual(responses.count, 5)
-            XCTAssertEqual(try responses[0].toString(), "PONG")
-            XCTAssertEqual(try responses[1].toString(), "OK")
-            XCTAssertEqual(try responses[2].toString(), "Me_llamo_test")
-            XCTAssertEqual(try responses[3].toError().content, "ERR unknown command \'BLAH\'")
-            XCTAssertEqual(try responses[4].toString(), "PONG")
+            XCTAssertEqual(try? responses[0].toString(), "PONG")
+            XCTAssertEqual(try? responses[1].toString(), "OK")
+            XCTAssertEqual(try? responses[2].toString(), "Me_llamo_test")
+            XCTAssertEqual(try? responses[3].toError().content, "ERR unknown command \'BLAH\'")
+            XCTAssertEqual(try? responses[4].toString(), "PONG")
         }
     }
 

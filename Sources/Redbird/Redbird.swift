@@ -21,7 +21,7 @@ public struct RedbirdConfig {
 ///Redis client object
 public class Redbird {
     
-    private(set) var socket: Socket
+    private(set) var socket: Socket!
     let config: RedbirdConfig
 
     public var address: String { return self.config.address }

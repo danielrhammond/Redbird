@@ -82,10 +82,11 @@ class ClientSocket: Socket {
         
         let desc = socket(AF_INET, sock_stream, Int32(IPPROTO_TCP))
         self.descriptor = desc
-        guard self.descriptor > 0 else { throw SocketError(.CreateSocketFailed) }
-        
         self.address = address
         self.port = port
+
+        guard self.descriptor > 0 else { throw SocketError(.CreateSocketFailed) }
+        
         try self.connect()
     }
 
